@@ -20,10 +20,6 @@ filtered_calories_amount.map! { |element|
     element.reduce { |a, e| a + e }
 }
 
-filtered_calories_amount.each do |element|
-    if (element > greatest_amount_of_calories)
-        greatest_amount_of_calories = element
-    end
-end
+filtered_calories_amount.sort!.reverse!
 
-puts greatest_amount_of_calories
+puts filtered_calories_amount.slice(0, 3).sum
